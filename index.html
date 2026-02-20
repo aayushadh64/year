@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiGravity - 365 Days From Earth</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="universe">
+        <canvas id="starfield"></canvas>
+        <div id="stage-container">
+            <!-- Dynamic content will be injected here -->
+        </div>
+
+        <div id="ui-overlay">
+            <button id="music-toggle" class="ui-btn">🎵 Music Off</button>
+        </div>
+    </div>
+
+    <!-- Load Scripts Sequentially (No Modules for file:// support) -->
+    <script src="js/utils/PetalRain.js"></script>
+    <script src="js/utils/MusicPlayer.js"></script>
+    <script src="js/utils/CursorGlow.js"></script>
+
+    <script src="js/stages/Stage1.js"></script>
+    <script src="js/stages/Stage2.js"></script>
+    <script src="js/stages/Stage3.js"></script>
+    <script src="js/stages/Stage4.js"></script>
+    <script src="js/stages/Stage5.js"></script>
+    <script src="js/stages/Stage6.js"></script>
+    <script src="js/stages/Stage7.js"></script>
+    <script src="js/stages/Stage8.js"></script>
+    <script src="js/stages/Stage9.js"></script>
+
+    <script src="js/stages/StageManager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
