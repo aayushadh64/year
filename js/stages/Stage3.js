@@ -52,8 +52,9 @@ window.Stage3 = class Stage3 {
         this.container.innerHTML = '';
 
         const wrapper = document.createElement('div');
-        wrapper.className = 'center-content fade-in';
-        wrapper.style.maxWidth = '500px';
+        wrapper.className = 'center-content'; // Removed fade-in
+        wrapper.style.maxWidth = '90vw'; // Increased from 500px
+        wrapper.style.width = 'fit-content';
 
         // Chapter Title
         const title = document.createElement('h2');
@@ -68,7 +69,7 @@ window.Stage3 = class Stage3 {
         const img = document.createElement('img');
         img.src = data.src;
         img.style.maxWidth = '100%';
-        img.style.maxHeight = '40vh';
+        img.style.maxHeight = '65vh'; // Increased from 40vh
         img.style.borderRadius = '12px';
         img.style.boxShadow = '0 8px 30px rgba(217, 4, 41, 0.15)';
         img.style.border = '4px solid white';
