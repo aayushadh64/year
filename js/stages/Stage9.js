@@ -10,7 +10,7 @@ window.Stage9 = class Stage9 {
         document.body.style.background = 'linear-gradient(to top, #ff9a9e 0%, #fecfef 50%, #ffffff 100%)';
 
         const wrapper = document.createElement('div');
-        wrapper.className = 'center-content fade-in';
+        wrapper.className = 'center-content'; // No animation
         wrapper.style.zIndex = '100';
 
         const title = document.createElement('h1');
