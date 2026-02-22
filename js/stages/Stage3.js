@@ -108,7 +108,6 @@ window.Stage3 = class Stage3 {
 
         // Auto-advance
         setTimeout(() => {
-            wrapper.classList.remove('fade-in');
             wrapper.classList.add('fade-out');
             setTimeout(() => {
                 this.currentChapter++;
