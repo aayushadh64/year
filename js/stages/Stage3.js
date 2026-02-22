@@ -72,7 +72,7 @@ window.Stage3 = class Stage3 {
         img.style.borderRadius = '12px';
         img.style.boxShadow = '0 8px 30px rgba(217, 4, 41, 0.15)';
         img.style.border = '4px solid white';
-        img.style.objectFit = 'cover';
+        img.style.objectFit = 'contain';
 
         img.onerror = () => {
             img.style.display = 'none';
