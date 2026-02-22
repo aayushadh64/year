@@ -74,16 +74,22 @@ window.Stage6 = class Stage6 {
             el.src = current.src;
             el.muted = true;
             el.autoplay = true;
+            el.loop = true;
             el.playsInline = true;
             el.style.width = '100%';
             el.style.height = '100%';
-            el.style.objectFit = 'cover';
+            el.style.objectFit = 'contain'; // Changed from cover to contain
+
+            // Explicitly play to avoid black screen on some browsers
+            el.load();
+            el.play().catch(e => console.error("Video play failed:", e));
         } else {
             el = document.createElement('div');
             el.style.width = '100%';
             el.style.height = '100%';
             el.style.backgroundImage = `url('${current.src}')`;
-            el.style.backgroundSize = 'cover';
+            el.style.backgroundSize = 'contain'; // Changed from cover to contain
+            el.style.backgroundRepeat = 'no-repeat';
             el.style.backgroundPosition = 'center';
         }
 
