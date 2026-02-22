@@ -25,12 +25,14 @@ window.Stage4 = class Stage4 {
         this.container.innerHTML = '';
 
         const wrapper = document.createElement('div');
-        wrapper.className = 'center-content fade-in';
+        wrapper.className = 'center-content'; // Removed fade-in
+        wrapper.style.maxWidth = '90vw';
+        wrapper.style.width = 'fit-content';
 
         const img = document.createElement('img');
         img.src = data.img;
         img.style.maxWidth = '100%';
-        img.style.maxHeight = '45vh';
+        img.style.maxHeight = '65vh';
         img.style.borderRadius = '12px';
         img.style.border = '4px solid white';
         img.style.boxShadow = '0 8px 30px rgba(217, 4, 41, 0.15)';
