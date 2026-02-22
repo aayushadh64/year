@@ -75,18 +75,12 @@ window.Stage9 = class Stage9 {
 
         img.style.left = x + 'px';
         img.style.top = y + 'px';
-        img.style.transform = `translate(-50%, -50%) rotate(${rotate}deg) scale(0)`;
-        img.style.opacity = '0';
-        img.style.objectFit = 'contain'; // Ensure no cropping
-        img.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease'; // Faster, snapier pop
+        img.style.transform = `translate(-50%, -50%) rotate(${rotate}deg) scale(1)`;
+        img.style.opacity = '1';
+        img.style.objectFit = 'contain';
+        img.style.transition = 'none'; // No effect, just appear
 
         this.container.appendChild(img);
-
-        requestAnimationFrame(() => {
-            void img.offsetWidth;
-            img.style.transform = `translate(-50%, -50%) rotate(${rotate}deg) scale(1)`;
-            img.style.opacity = '1';
-        });
 
         img.onerror = () => img.remove();
     }
