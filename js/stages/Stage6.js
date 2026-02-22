@@ -72,28 +72,31 @@ window.Stage6 = class Stage6 {
         if (current.type === 'video') {
             el = document.createElement('video');
             el.src = current.src;
+            el.setAttribute('muted', '');
+            el.setAttribute('playsinline', '');
+            el.setAttribute('autoplay', '');
+            el.setAttribute('loop', '');
             el.muted = true;
             el.autoplay = true;
-            el.loop = true;
             el.playsInline = true;
             el.style.width = '100%';
             el.style.height = '100%';
-            el.style.objectFit = 'contain'; // Changed from cover to contain
+            el.style.objectFit = 'contain';
 
-            // Explicitly play to avoid black screen on some browsers
+            // Wait for it to be ready
+            el.oncanplay = () => {
+                el.play().catch(e => console.log("Play failed:", e));
+            };
+
             el.load();
-            el.play().catch(e => console.error("Video play failed:", e));
         } else {
-            el = document.createElement('div');
+            el = document.createElement('img');
+            el.src = current.src;
             el.style.width = '100%';
             el.style.height = '100%';
-            el.style.backgroundImage = `url('${current.src}')`;
-            el.style.backgroundSize = 'contain'; // Changed from cover to contain
-            el.style.backgroundRepeat = 'no-repeat';
-            el.style.backgroundPosition = 'center';
+            el.style.objectFit = 'contain';
         }
 
-        el.className = 'fade-in';
         this.displayContainer.appendChild(el);
 
         // Update text halfway through
@@ -101,7 +104,6 @@ window.Stage6 = class Stage6 {
         if (this.currentIndex === 7) this.caption.innerText = "I love you to the moon and back.";
 
         setTimeout(() => {
-            el.classList.remove('fade-in');
             el.classList.add('fade-out');
             setTimeout(() => {
                 this.currentIndex++;
