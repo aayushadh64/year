@@ -69,7 +69,6 @@ window.Stage4 = class Stage4 {
         this.container.appendChild(wrapper);
 
         setTimeout(() => {
-            wrapper.classList.remove('fade-in');
             wrapper.classList.add('fade-out');
             setTimeout(() => {
                 this.currentIndex++;
