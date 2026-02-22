@@ -77,7 +77,8 @@ window.Stage9 = class Stage9 {
         img.style.top = y + 'px';
         img.style.transform = `translate(-50%, -50%) rotate(${rotate}deg) scale(0)`;
         img.style.opacity = '0';
-        img.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        img.style.objectFit = 'contain'; // Ensure no cropping
+        img.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease'; // Faster, snapier pop
 
         this.container.appendChild(img);
 
