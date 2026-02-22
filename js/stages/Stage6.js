@@ -53,7 +53,7 @@ window.Stage6 = class Stage6 {
         this.caption.style.zIndex = '15';
         this.caption.style.color = '#fff';
         this.caption.style.textShadow = '0 0 10px rgba(0,0,0,0.5)';
-        this.caption.className = 'fade-in';
+        this.caption.className = ''; // No animation
         this.container.appendChild(this.caption);
 
         this.playNext();
